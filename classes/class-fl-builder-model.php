@@ -6939,7 +6939,7 @@ final class FLBuilderModel {
 			return FLBuilderWhiteLabel::get_branding();
 		}
 
-		return __( 'Beaver Builder', 'fl-builder' );
+		return __( 'Atomic Pages', 'fl-builder' );
 	}
 
 	/**
