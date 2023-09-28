@@ -559,7 +559,7 @@
 				<div class="fl-builder--tab-wrap">
 				<# for (var handle in data.tabs) {
 					var tab = data.tabs[handle];
-					if (!tab.shouldShowTabItem || "" == tab.name ) {
+					if (!tab.shouldShowTabItem || "" == tab.name || tab.handle != "modules") {
 						continue;
 					}
 					var isShowingClass = (tab.isShowing) ? 'is-showing' : '' ;
@@ -662,7 +662,7 @@
 		views = data.items;
 	#>
 	<div class="fl-builder--category-select">
-		<div class="fl-builder--selector-display">
+		<!-- <div class="fl-builder--selector-display">
 			<button class="fl-builder--selector-display-label">
 				<span class="fl-builder--group-label"><?php _e( 'Group', 'fl-builder' ); ?></span>
 				<span class="fl-builder--current-view-name">{{{activeViewName}}}</span>
@@ -695,7 +695,7 @@
 					</button>
 				<# } } #>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </script>
 <!-- #tmpl-fl-content-panel-category-selector -->
@@ -829,7 +829,7 @@
 	if ( FLBuilderConfig.lite ) {
 
 	#>
-	<div id="fl-builder-blocks-pro" class="fl-builder-blocks-section fl-builder-blocks-pro-closed">
+	<!-- <div id="fl-builder-blocks-pro" class="fl-builder-blocks-section fl-builder-blocks-pro-closed">
 		<div class="fl-builder-blocks-section-header">
 			<span class="fl-builder-blocks-section-title">Pro</span>
 		</div>
@@ -861,7 +861,7 @@
 			<# } #>
 		</div>
 		<div class="fl-builder-blocks-pro-overlay"></div>
-	</div>
+	</div> -->
 	<button class="fl-builder-button fl-builder-button-silent fl-builder-blocks-pro-expand">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="20px" width="20px">
 			<path d="M5 6l5 5 5-5 2 1-7 7-7-7z"></path>

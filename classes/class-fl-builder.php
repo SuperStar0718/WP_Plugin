@@ -1867,13 +1867,13 @@ final class FLBuilder {
 			$i++;
 		}
 
-		echo '<span class="fl-builder--saving-indicator"></span>';
+		// echo '<span class="fl-builder--saving-indicator"></span>';
 
 		if ( ! $simple_ui && ! FLBuilderModel::is_white_labeled() && $notifications['data'] && '{}' !== $notifications['data'] && ! apply_filters( 'fl_disable_notifications', false ) ) {
 			echo '<span class="fl-builder-bar-spacer"></span>';
-			echo '<button id="fl-builder-toggle-notifications" class="fl-builder-button fl-builder-button-silent">';
-			include FL_BUILDER_DIR . 'img/svg/bell-active.svg';
-			echo '</button>';
+			// echo '<button id="fl-builder-toggle-notifications" class="fl-builder-button fl-builder-button-silent">';
+			// include FL_BUILDER_DIR . 'img/svg/bell-active.svg';
+			// echo '</button>';
 		}
 
 		echo '</div>';
