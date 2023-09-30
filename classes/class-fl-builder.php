@@ -1754,7 +1754,7 @@ final class FLBuilder {
 		}
 
 		/* translators: %s: post label */
-		$pretitle = sprintf( _x( 'Currently Editing %s', 'Currently editing message', 'fl-builder' ), $edited_object_label );
+		$pretitle = sprintf( _x( 'Working %s', 'Currently editing message', 'fl-builder' ), $edited_object_label );
 		$pretitle = apply_filters( 'fl_builder_ui_bar_pretitle', $pretitle );
 
 		// Render the bar title.
@@ -4326,12 +4326,12 @@ final class FLBuilder {
 			// we need to do a popup
 			$content = __( 'You must call the_content in the current theme template in order for Beaver Builder to work on this layout.', 'fl-builder' );
 			?>
-			<script>
-				if ( FLBuilder ) {
-					FLBuilder.alert('<?php echo esc_attr( $content ); ?>');
-				}
-			</script>
-			<?php
+<script>
+if (FLBuilder) {
+    FLBuilder.alert('<?php echo esc_attr( $content ); ?>');
+}
+</script>
+<?php
 		}
 	}
 
