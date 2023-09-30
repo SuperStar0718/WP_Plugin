@@ -559,7 +559,7 @@
 				<div class="fl-builder--tab-wrap">
 				<# for (var handle in data.tabs) {
 					var tab = data.tabs[handle];
-					if (!tab.shouldShowTabItem || "" == tab.name || tab.handle != "modules") {
+					if (!tab.shouldShowTabItem || "" == tab.name || ( tab.handle != "modules" &&  tab.handle != "rows") ) {
 						continue;
 					}
 					var isShowingClass = (tab.isShowing) ? 'is-showing' : '' ;
@@ -893,21 +893,25 @@
 					id = group.id,
 					name = group.name;
 			#>
-			<span class="fl-builder-block fl-builder-block-row fl-builder-block-col-group" data-cols="{{id}}" title="{{name}}">
-				<span class="fl-builder-block-content">
-					<span class="fl-builder-block-visual fl-cols-visual {{id}}">
-						<# for ( i = 0; i < group.count; i++ ) { #>
-						<span class="fl-cols-visual-col"></span>
-						<# } #>
+				<# if ( i > 3 ) {
+					continue;
+				} #>
+					<span class="fl-builder-block fl-builder-block-row fl-builder-block-col-group" data-cols="{{id}}" title="{{name}}">
+						<span class="fl-builder-block-content">
+							<span class="fl-builder-block-visual fl-cols-visual {{id}}">
+								<# for ( i = 0; i < group.count; i++ ) { #>
+								<span class="fl-cols-visual-col"></span>
+								<# } #>
+							</span>
+							<span class="fl-builder-block-title">{{name}}</span>
+						</span>
 					</span>
-					<span class="fl-builder-block-title">{{name}}</span>
-				</span>
-			</span>
+
 			<# } #>
 		</div>
 		<# } #>
 
-		<# if (FLBuilderConfig.lite) { #>
+		<!-- <# if (FLBuilderConfig.lite) { #>
 		<div class="fl-builder--panel-cta">
 			<img src="<?php echo FLBuilder::plugin_url(); ?>img/beaver.png" />
 			<a href="https://www.wpbeaverbuilder.com/?utm_medium=bb-lite&amp;utm_source=builder-ui&amp;utm_campaign=modules-panel-cta" target="_blank">
@@ -917,7 +921,7 @@
 				<?php _ex( 'Learn More', 'Link to learn more about premium Beaver Builder', 'fl-builder' ); ?>
 			</button>
 		</div>
-		<# } #>
+		<# } #> -->
 	</div>
 </script>
 <!-- #tmpl-fl-content-panel-col-groups-view -->
@@ -983,7 +987,7 @@
 		}
 		#>
 	</div>
-	<# if (FLBuilderConfig.lite) { #>
+	<!-- <# if (FLBuilderConfig.lite) { #>
 	<div class="fl-builder--panel-cta">
 		<img src="<?php echo FLBuilder::plugin_url(); ?>img/beaver.png" />
 		<a href="https://www.wpbeaverbuilder.com/?utm_medium=bb-lite&amp;utm_source=builder-ui&amp;utm_campaign=modules-panel-cta" target="_blank">
@@ -993,7 +997,7 @@
 			<?php _ex( 'Learn More', 'Link to learn more about premium Beaver Builder', 'fl-builder' ); ?>
 		</button>
 	</div>
-	<# } #>
+	<# } #> -->
 </script>
 <!-- #tmpl-fl-content-panel-templates-view -->
 
