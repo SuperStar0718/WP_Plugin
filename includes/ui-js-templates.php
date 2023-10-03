@@ -559,7 +559,7 @@
 				<div class="fl-builder--tab-wrap">
 				<# for (var handle in data.tabs) {
 					var tab = data.tabs[handle];
-					if (!tab.shouldShowTabItem || "" == tab.name || ( tab.handle != "modules" &&  tab.handle != "rows") ) {
+					if (!tab.shouldShowTabItem || "" == tab.name ) {
 						continue;
 					}
 					var isShowingClass = (tab.isShowing) ? 'is-showing' : '' ;
@@ -582,6 +582,7 @@
 							</g>
 						</svg>
 					</button>
+
 					<div class="fl-builder-panel-search-input">
 						<input name="search-term" placeholder="<?php _e( 'Search Modules', 'fl-builder' ); ?>" />
 						<button class="fl-builder-dismiss-panel-search">
@@ -719,6 +720,7 @@
 
 					if ( _.isUndefined(modules) ) { continue; }
 				#>
+
 				<div id="fl-builder-blocks-{{slug}}" class="fl-builder-blocks-section">
 					<div class="fl-builder-blocks-section-header">
 						<span class="fl-builder-blocks-section-title">{{title}}</span>
@@ -896,6 +898,7 @@
 				<# if ( i > 3 ) {
 					continue;
 				} #>
+
 					<span class="fl-builder-block fl-builder-block-row fl-builder-block-col-group" data-cols="{{id}}" title="{{name}}">
 						<span class="fl-builder-block-content">
 							<span class="fl-builder-block-visual fl-cols-visual {{id}}">
@@ -1020,6 +1023,7 @@
 					categoryName = catHandle;
 				}
 				#>
+
 				<div class="fl-builder-blocks-section">
 					<# if (catHandle !== 'uncategorized' && catHandle !== FLBuilderStrings.undefined && Object.keys(categories).length > 1) { #>
 					<div class="fl-builder-blocks-section-header">
@@ -1152,6 +1156,7 @@
 
 <script type="text/html" id="tmpl-fl-no-revisions-message">
 	<div class="fl-no-revisions-message">
+
 		<div class="fl-no-revisions-message-title">
 			<?php _e( 'No Revisions Found', 'fl-builder' ); ?>
 		</div>
